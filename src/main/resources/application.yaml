@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: elk
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=elasticsearch
+    username: postgres
+    password: "1"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: elasticsearch
+    hibernate:
+      ddl-auto: update
+
+logstash:
+  host: localhost
+  port: 5044
